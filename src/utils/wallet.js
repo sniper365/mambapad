@@ -1,7 +1,16 @@
 // Set of helper functions to facilitate wallet setup
 
-import { BASE_BSC_SCAN_URL, BASE_URL} from "../config";
+
+
+
 import { nodes } from './getRpcUrl'
+
+const BASE_URL = 'https://leonicornswap.com'
+const BASE_BSC_SCAN_URLS = {
+  [56]: 'https://bscscan.com',
+  [97]: 'https://testnet.bscscan.com',
+}
+const BASE_BSC_SCAN_URL = BASE_BSC_SCAN_URLS[process.env.REACT_APP_CHAIN_ID]
 
 /**
  * Prompt the user to add BSC as a network on Metamask, or switch to BSC if the wallet is on a different network

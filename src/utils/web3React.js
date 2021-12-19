@@ -1,6 +1,6 @@
 import { InjectedConnector } from '@web3-react/injected-connector'
-import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
-import { BscConnector } from '@binance-chain/bsc-connector'
+// import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
+// import { BscConnector } from '@binance-chain/bsc-connector'
 import { ethers } from 'ethers'
 import getNodeUrl from './getRpcUrl'
 
@@ -10,13 +10,13 @@ const chainId = parseInt(process.env.REACT_APP_CHAIN_ID, 10)
 
 export const injected = new InjectedConnector({ supportedChainIds: [chainId] })
 
-export const walletconnect = new WalletConnectConnector({
-  rpc: { [chainId]: rpcUrl },
-  qrcode: true,
-  pollingInterval: POLLING_INTERVAL,
-})
+// export const walletconnect = new WalletConnectConnector({
+//   rpc: { [chainId]: rpcUrl },
+//   qrcode: true,
+//   pollingInterval: POLLING_INTERVAL,
+// })
 
-export const bscConnector = new BscConnector({ supportedChainIds: [chainId] })
+// export const bscConnector = new BscConnector({ supportedChainIds: [chainId] })
 
 export const getLibrary = (provider) => {
   const library = new ethers.providers.Web3Provider(provider)

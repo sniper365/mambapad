@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
-import partnerbtn from "../../assets/img/partner-btn.png";
-import leftmamba from "../../assets/img/leftside_mamba.png"
+import partnerbtn from "../../assets/img/new-samsara.png";
+import leftmamba from "../../assets/img/leftside_mamba.png";
 // import AdvisorCard from "./AdvisorCard";
 
 // import { advisors } from "../../assets/variables";
@@ -16,35 +16,36 @@ export default class Partners extends Component {
             <h3 className="col-12 text-center font-weight-bold sub-title">
               PARTNERS
             </h3>
-            <img src={leftmamba} alt='leftmamba' style={{position:'absolute',width:300,left:0, top:'610%'}}/>
-            <span className="partner partner-btn">
-              <button>
+            <div className="partner-mamba">
+              <img
+                src={leftmamba}
+                alt="leftmamba"
+                style={{
+                  position: "absolute",
+                  width: 300,
+                  left: 0,
+                  top: "610%",
+                }}
+              />
+            </div>
+            <div className="partner-btns"  >
+                <img src={partnerbtn} alt="samsara"/>
+                <img src={partnerbtn} alt="samsara"/>
                 <img src={partnerbtn} alt="samsara" />
-              </button>
-            </span>
-            <button className="partner partner-btn">
-              <img src={partnerbtn} alt="samsara" />
-            </button>
-            <button className="partner partner-btn">
-              <img src={partnerbtn} alt="samsara" />
-            </button>
+            </div>
           </section>
           <section className="release">
             <h3 className="col-12 text-center font-weight-bold sub-title">
               PRESS RELEASE
             </h3>
-            <button className="partner partner-btn">
-              <img src={partnerbtn} alt="samsara" />
-            </button>
-            <button className="partner partner-btn">
-              <img src={partnerbtn} alt="samsara" />
-            </button>
-            <button className="partner partner-btn">
-              <img src={partnerbtn} alt="samsara" />
-            </button>
+            <div className="partner-btns" style={{textAlign:'center'}} >
+                <img src={partnerbtn} alt="samsara" style={{cursor:'pointer'}}/>
+                <img src={partnerbtn} alt="samsara" style={{cursor:'pointer'}}/>
+                <img src={partnerbtn} alt="samsara" style={{cursor:'pointer'}}/>
+            </div>
           </section>
         </section>
-        <hr style={{ borderColor: "#f1b90c", marginTop:'80px' }} />
+        <hr style={{ borderColor: "#f1b90c", marginTop: "80px" }} />
       </>
     );
   }

@@ -1,4 +1,5 @@
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Router } from "react-router-dom";
+import history from "./routerHistory";
 
 import { Provider } from "react-redux";
 import store from "./redux/store";
@@ -12,20 +13,18 @@ import Staking from "./pages/Staking";
 import Vesting from "./pages/Vesting";
 import ApplyIDO from "./pages/ApplyIDO";
 
-function App() {
+const App = () => {
   return (
-    <Provider store={store}>
-      <SimpleBar style={{maxheight:400}}>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/projects/" component={Projects} />
-          <Route exact path="/staking/" component={Staking} />
-          <Route exact path="/vesting/" component={Vesting} />
-          <Route exact path="/applyido/" component={ApplyIDO} />
-        </Switch>
-      </SimpleBar>
-    </Provider>
+    <Router history={history}>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/projects/" component={Projects} />
+        <Route exact path="/staking/" component={Staking} />
+        <Route exact path="/vesting/" component={Vesting} />
+        <Route exact path="/applyido/" component={ApplyIDO} />
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default App;

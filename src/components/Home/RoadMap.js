@@ -14,11 +14,11 @@ export default class RoadMap extends Component {
             Quam a at nisl, vulputate blandit etiam. Lacinia cras enim sit
             viverra imperdiet. Id malesuada eget scelerisque elit.
           </p>
-          <div className="img-roadmap">
+          <div className="img-roadmap" style={{textAlign:'center'}}>
             <img
               src={img}
               alt="network"
-              style={{ width: 800 + "px", marginLeft: "140px" }}
+              style={{ width: 800 + "px", margin:'0 100px',}}
             />
           </div>
         </section>

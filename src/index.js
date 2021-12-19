@@ -7,15 +7,16 @@ import "simplebar/dist/simplebar.min.css";
 import "./index.css";
 import "./assets/css/bootstrap.min.css";
 import App from "./App";
+import Providers from "./Providers";
 
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
-  <Router>
-    <SimpleBar>
+  <React.StrictMode>
+    <Providers>
       <App />
-    </SimpleBar>
-  </Router>,
+    </Providers>
+  </React.StrictMode>,
   document.getElementById("root")
 );
 

@@ -5,7 +5,6 @@
   font-family: "PT sans", sans-serif;
 }
 
-
 @font-face {
   font-family: fl1-shelly;
   src: url("./assets/css/fonts/fl1_shelly.ttf") format("truetype");
@@ -293,6 +292,26 @@ button:focus {
   border: 1px solid #f1b90c;
   border-radius: 5px;
 }
+.connect-button {
+  color: var(--mainWhite);
+  transition: var(--mainTransition);
+  font-size: 1rem;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  margin-left:  0.5rem;
+  cursor: pointer;
+  align-items: center;
+  align-self: center;
+  padding: 3px 10px;
+  background-color: orange;
+  /* max-width: 80px;
+  width: 100%; */
+}
+.connect-button:hover {
+  background: transparent;
+  color: var(--mainWhite);
+  border-color: var(--mainWhite);
+}
 .navbar a {
   text-decoration: none;
 }
@@ -415,7 +434,6 @@ button:focus {
   overflow: hidden;
   border-radius: 25px;
   border-style: solid;
-
 }
 .hexagon {
   top: 30vh;
@@ -424,7 +442,7 @@ button:focus {
   margin: 0 auto;
   background-color: dodgerblue;
   border-radius: 10px;
-  width: 100px; 
+  width: 100px;
   height: 63px;
   box-sizing: border-box;
   transition: all 1s;
@@ -458,7 +476,6 @@ that they form a hexagon */
   height: 250px;
   border-radius: 125px;
   -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
-
 }
 
 #videoElement {
@@ -590,7 +607,7 @@ that they form a hexagon */
 
 /* The container's content you want to add an overflow to */
 .container .scrollable-content {
-  flex-grow: 1;  
+  flex-grow: 1;
   overflow: auto;
 }
 .hero-title {
@@ -683,7 +700,7 @@ that they form a hexagon */
   position: absolute;
   z-index: -1;
   left: 0px;
-
+  
   height: 300px;
   width: 300px;
 }
@@ -712,35 +729,50 @@ that they form a hexagon */
   font-weight: bolder;
 }
 .tier .projects {
+  width: 100%;
+  margin-left: 0;
+  justify-content: center;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
-.tier-card {
-  margin: 1em;
+.tier .tier-card {
+  margin: 1rem;
   text-align: center;
-  background: linear-gradient(
-    151.07deg,
-    rgba(255, 255, 255, 0.2) 2.19%,
-    rgba(255, 255, 255, 0.052) 100%
-  );
+  background-color: var(--card-background-color);
   box-shadow: 1px 2px 20px rgb(0 0 0 / 10%);
   backdrop-filter: blur(30px);
   border-radius: 20px;
   transform: all ease-in-out 0.3s;
-  min-height: 350px;
+  min-height: 300px;
   padding: 10px;
 }
 .tier .tier-card-header {
-  color: var(--primary-text-color);
-  font-size: 28px;
+  color: var(--mainWhite);
+  font-size: 24px;
   font-weight: bold;
 }
-.tier-card-footer {
-  color: var(--primary-text-color);
-  font-size: 28px;
+.tier .tier-card-body {
+  color: var(--mainWhite);
+  margin-bottom: 10;
+}
+.tier .tier-card-footer {
+  margin-top: 10;
   font-weight: bold;
-  text-align: center;
-  margin-left: 20px;
+}
+.tier-button {
+  margin: 0 20px;
+  padding: 15px ;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 12px;
+  color: var(--mainWhite);
+  background-color: orange;
+  width: 150px;
+}
+.tier-button:hover {
+  background: transparent;
+  color: var(--mainWhite);
+  border-color: var(--mainWhite);
 }
 .tier .tier-card hr {
   background: rgb(255 255 255 / 70%);
@@ -863,13 +895,21 @@ that they form a hexagon */
   width: 100%;
   height: auto;
 }
-.tiersystem-mamba {
+.partner-mamba {
   position: absolute;
   z-index: -1;
-  right: 0px;
+  left: 0px;
+  width: 100px;
+  height: 100px;
+}
+.partner-btns {
+  text-align: center;
 
-  height: 300px;
-  width: 300px;
+}
+.partner-btns img {
+  margin:1rem;
+  width: 30%;
+  cursor: pointer;
 }
 /* end of Team component */
 
@@ -1576,11 +1616,8 @@ that they form a hexagon */
   height: 40px;
   background-color: var(--mainWhite);
   border-radius: 3px;
-
 }
 .reward-countdown .reward-countdown-card {
-
 }
 
 /* --------------END OF STAKING PAGE */
-

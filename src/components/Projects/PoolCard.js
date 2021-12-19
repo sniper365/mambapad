@@ -1,24 +1,12 @@
 import React from "react";
 import {
-  Container,
   Row,
   Col,
   Table,
-  Card,
-  Button,
   Form,
 } from "react-bootstrap";
 
 import PropTypes from "prop-types";
-
-import {
-  SiWebpack,
-  AiFillTwitterCircle,
-  AiOutlineMedium,
-  FaTelegramPlane,
-  BsCircleFill,
-} from "react-icons/all";
-import { ProgressBar } from "react-bootstrap";
 
 export default function PoolCard({ project }) {
   return (

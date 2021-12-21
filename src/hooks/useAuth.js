@@ -1,15 +1,15 @@
 import { useCallback } from 'react'
 import { useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
 // import { NoBscProviderError } from '@binance-chain/bsc-connector'
-import {
-  NoEthereumProviderError,
-  UserRejectedRequestError as UserRejectedRequestErrorInjected,
-} from '@web3-react/injected-connector'
+// import {
+//   NoEthereumProviderError,
+//   UserRejectedRequestError as UserRejectedRequestErrorInjected,
+// } from '@web3-react/injected-connector'
 // import {
 //   UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
 //   WalletConnectConnector,
 // } from '@web3-react/walletconnect-connector'
-// import { connectorLocalStorageKey } from "uikit";
+import { connectorLocalStorageKey } from "../config";
 import { injected } from "../utils/web3React";
 import { setupNetwork } from "../utils/wallet";
 // import useToast from "./useToast";
@@ -22,15 +22,17 @@ const useAuth = () => {
   const login = useCallback(
     () => {
       const connector = injected
-      if (connector) {
+      if (connector) { 
         activate(connector, async (error) => {
           if (error instanceof UnsupportedChainIdError) {
             const hasSetup = await setupNetwork()
             if (hasSetup) {
               activate(connector)
+              console.info('connector====',connector)
             }
+            
           } else {
-            // window.localStorage.removeItem(connectorLocalStorageKey)
+            window.localStorage.removeItem(connectorLocalStorageKey)
             // if (error instanceof NoEthereumProviderError || error instanceof NoBscProviderError) {
             //   toastError('Provider Error', 'No provider was found')
             // } else if (

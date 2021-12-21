@@ -967,7 +967,9 @@ that they form a hexagon */
 /* end of Home page */
 /* custom card */
 .custom-card {
-  background-color: rgba(255, 255, 255, 0.2);
+  background: linear-gradient( 
+    215deg, rgba(255, 255, 255, 0.2) 53.89%, rgba(255, 255, 255, 0) 106.45% );
+  backdrop-filter: blur(30px);
   box-shadow: 1px 2px 20px rgb(0 0 0 / 10%);
   border-radius: 20px;
   margin: 2rem;
@@ -1620,4 +1622,17 @@ that they form a hexagon */
 .reward-countdown .reward-countdown-card {
 }
 
+.drawerbox {
+  background: linear-gradient(
+    101.58deg,
+    rgba(255, 255, 255, 0.2) 1.89%,
+    rgba(255, 255, 255, 0) 99.45%
+  );
+  backdrop-filter: blur(30px);
+  box-shadow: 1px 2px 20px rgb(0 0 0 / 10%);
+  border-radius: 20px;
+  transform: all ease-in-out 0.3s;
+  height: 300px;
+  width:600px;
+}
 /* --------------END OF STAKING PAGE */

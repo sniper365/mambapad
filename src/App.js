@@ -1,9 +1,9 @@
 import { Route, Switch, Router } from "react-router-dom";
 import history from "./routerHistory";
 
-import { Provider } from "react-redux";
-import store from "./redux/store";
-import SimpleBar from "simplebar-react";
+// import { Provider } from "react-redux";
+// import store from "./redux/store";
+// import SimpleBar from "simplebar-react";
 import "simplebar/dist/simplebar.min.css";
 import "./App.css";
 
@@ -12,8 +12,10 @@ import Projects from "./pages/Projects";
 import Staking from "./pages/Staking";
 import Vesting from "./pages/Vesting";
 import ApplyIDO from "./pages/ApplyIDO";
+import useEagerConnect from "./hooks/useEagerConnnect";
 
 const App = () => {
+  useEagerConnect()
   return (
     <Router history={history}>
       <Switch>

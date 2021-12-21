@@ -1,4 +1,13 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
+
+import { ethers } from "ethers";
+
+import {
+  getBalanceAmount,
+  getDecimalAmount,
+  customProvider,
+} from "../../utils/formatBalance";
+import { useWeb3React } from "@web3-react/core";
 
 import {
   FaTwitter,
@@ -9,14 +18,51 @@ import {
   FaDiscord,
 } from "react-icons/all";
 import { Row, Col } from "react-bootstrap";
-
 import polygons from "../../assets/img/eightpolygons.png";
-import polygonmask from "../../assets/img/image-polygon.png";
-import mambavideo from "../../assets/mamba.mp4";
 import MediaPlayer from "../../components/MediaPlayer";
 import "video-react/dist/video-react.css";
+import { getLeosContract } from "../../utils/contractHelpers";
+import { ethersToBigNumber, ethersToSerializedBigNumber } from "../../utils/bigNumber";
+
 
 const Hero = () => {
+  const { account, library } = useWeb3React();
+  useEffect(() => {
+    const getBalancer = async (account) => {
+      console.info(account)
+      if (account) {
+        const bnb = await library.getSigner().getBalance();
+        console.info('bnb',getBalanceAmount(bnb.toString(),18)*1.0)  
+        const leos = await getLeosContract(library.getSigner()).balanceOf(account);  
+        console.info(getBalanceAmount(leos.toString(),8)*1.0)
+        return bnb, leos;
+      }
+    };
+    getBalancer(account);
+  }, [account, library]);
+
+  // if (library) {
+  //   console.info(library.getSigner().getBalance());
+  //   const hex = library.getSigner().getBalance();
+  //   console.info("hex", hex);
+  //   const myBNB = getBalanceAmount(hex, 18);
+  //   const myBNB2 = getDecimalAmount(hex, 18);
+  //   console.info(myBNB, myBNB2);
+  // }
+
+  // console.info(ethers.utils.formatEther(balance))
+
+  // let network = "Binance Smart Chain Mainnet";
+  // const provider = ethers.getDefaultProvider(network);
+  // console.info(provider);
+  // const address = "0x740aC5a1BbF57911d1F7743296ec29D5a1a8737E";
+
+  // const balance1 = await provider.getBalance(account);
+  // console.info("balance1:", balance1);
+  // provider.getBalance(address).then((balanceofaccount) => {
+  //   const balanceInEth = ethers.utils.formatEther(balanceofaccount);
+  //   console.info(`balance: ${balanceInEth} ETH`);
+  // });
   return (
     <>
       <section className="container hero">
@@ -58,9 +104,11 @@ const Hero = () => {
             </section>
             <br />
             <p className="hero-description">
-              Sed egestas quis commodo, faucibus commodo dictum dignissim nisl
+              {/* Sed egestas quis commodo, faucibus commodo dictum dignissim nisl
               ac. Tincidunt cursus placerat lorem mi ac rhoncus eu. Id in
-              integer risus, fames mi, luctus.
+              integer risus, fames mi, luctus. */}
+              {account}
+              {/* {balanceInEth} */}
             </p>
             <br />
             <button type="button" className="btn btn-warning button-large">
@@ -113,12 +161,6 @@ const Hero = () => {
               <img src={polygons} alt="eightpolygons" />
             </div>
             <MediaPlayer />
-            {/* <div className="media-box">
-              <video  controls>
-                <source src={mambavideo} type="video/mp4" />
-              </video>
-            </div> */}
-            {/* <div className='hexagon'></div> */}
           </Col>
         </Row>
       </section>

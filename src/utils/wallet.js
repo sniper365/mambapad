@@ -18,6 +18,7 @@ const BASE_BSC_SCAN_URL = BASE_BSC_SCAN_URLS[process.env.REACT_APP_CHAIN_ID]
  */
 export const setupNetwork = async () => {
   const provider = window.ethereum
+  console.info('chainId')
   if (provider) {
     const chainId = parseInt(process.env.REACT_APP_CHAIN_ID, 10)
     try {

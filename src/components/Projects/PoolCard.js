@@ -24,9 +24,9 @@ export default function PoolCard({ project }) {
       </div>
       <div className="pool-card-body">
         <section>      
-            <h3 style={{ marginBottom: 10, textAlign:'center' }}>Total Amount per IDO: X BNB </h3>
-            <h3 style={{ marginBottom: 10, textAlign:'center'  }}>Pool OPEN: 12 APRIL 2022 17:00 UTC</h3>
-            <h3 style={{ marginBottom: 0, textAlign:'center'  }}>Pool will be open for Y hours</h3>
+            <h4 style={{ marginBottom: 10, textAlign:'center' }}>Total Amount per IDO: X BNB </h4>
+            <h4 style={{ marginBottom: 10, textAlign:'center'  }}>Pool OPEN: 12 APRIL 2022 17:00 UTC</h4>
+            <h4 style={{ marginBottom: 0, textAlign:'center'  }}>Pool will be open for Y hours</h4>
           <Row style={{marginTop:'20px'}}>
             <Col lg={7} style={{marginTop:'10px'}}>
               <Table bordered hover variant="dark">

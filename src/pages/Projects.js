@@ -12,8 +12,10 @@ export default function Projects() {
     <>
       <Header />
       <Background />
-      <hi>Cooming Soon...</hi>
-
+      <ProjectsOpen />
+      <ProjectsComing />
+      <ProjectsClosed />
+      <Footer />
     </>
   );
 }

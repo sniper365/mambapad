@@ -10,9 +10,12 @@ export default class ProjectsComing extends Component {
   render() {
     return (
       <>
-        <h1 className="font-weight-bold text-white project-title" style={{marginLeft:'100px'}}>
+        <h3
+          className="col-12 text-center font-weight-bold sub-title"
+
+        >
           PROJECTS COMING SOON
-        </h1>
+        </h3>
         {/* <div> */}
             <img src={rightsidemamba} alt="rightmamba" style={{position:'absolute',width:250,right:-50,}} />
           {/* </div> */}

@@ -10,12 +10,12 @@ export default class ProjectsOpen extends Component {
   render() {
     return (
       <>
-        <h1
-          className="font-weight-bold text-white project-title"
-          style={{ marginLeft: "100px" }}
+        <h3
+          className="col-12 text-center font-weight-bold sub-title"
+
         >
           ACTIVE POOLS
-        </h1>
+        </h3>
         <section className="projects">
           {projects.map((project, index) => {
             return (

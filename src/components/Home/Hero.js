@@ -1,14 +1,12 @@
-import React, { useRef, useEffect } from "react";
-
-import { ethers } from "ethers";
+import React, {useEffect } from "react";
+import { useWeb3React } from "@web3-react/core";
+import { Row, Col } from "react-bootstrap";
+import {toast} from 'react-toastify';
+import {useModal} from 'react-simple-modal-provider';
 
 import {
   getBalanceAmount,
-  getDecimalAmount,
-  customProvider,
 } from "../../utils/formatBalance";
-import { useWeb3React } from "@web3-react/core";
-
 import {
   FaTwitter,
   FaTelegram,
@@ -17,16 +15,16 @@ import {
   FaYoutube,
   FaDiscord,
 } from "react-icons/all";
-import { Row, Col } from "react-bootstrap";
 import polygons from "../../assets/img/eightpolygons.png";
 import MediaPlayer from "../../components/MediaPlayer";
 import "video-react/dist/video-react.css";
 import { getLeosContract } from "../../utils/contractHelpers";
-import { ethersToBigNumber, ethersToSerializedBigNumber } from "../../utils/bigNumber";
 
 
 const Hero = () => {
   const { account, library } = useWeb3React();
+  const {open:openModal1} = useModal("Modal1");
+
   useEffect(() => {
     const getBalancer = async (account) => {
       console.info(account)
@@ -41,28 +39,6 @@ const Hero = () => {
     getBalancer(account);
   }, [account, library]);
 
-  // if (library) {
-  //   console.info(library.getSigner().getBalance());
-  //   const hex = library.getSigner().getBalance();
-  //   console.info("hex", hex);
-  //   const myBNB = getBalanceAmount(hex, 18);
-  //   const myBNB2 = getDecimalAmount(hex, 18);
-  //   console.info(myBNB, myBNB2);
-  // }
-
-  // console.info(ethers.utils.formatEther(balance))
-
-  // let network = "Binance Smart Chain Mainnet";
-  // const provider = ethers.getDefaultProvider(network);
-  // console.info(provider);
-  // const address = "0x740aC5a1BbF57911d1F7743296ec29D5a1a8737E";
-
-  // const balance1 = await provider.getBalance(account);
-  // console.info("balance1:", balance1);
-  // provider.getBalance(address).then((balanceofaccount) => {
-  //   const balanceInEth = ethers.utils.formatEther(balanceofaccount);
-  //   console.info(`balance: ${balanceInEth} ETH`);
-  // });
   return (
     <>
       <section className="container hero">
@@ -104,19 +80,18 @@ const Hero = () => {
             </section>
             <br />
             <p className="hero-description">
-              {/* Sed egestas quis commodo, faucibus commodo dictum dignissim nisl
+              Sed egestas quis commodo, faucibus commodo dictum dignissim nisl
               ac. Tincidunt cursus placerat lorem mi ac rhoncus eu. Id in
-              integer risus, fames mi, luctus. */}
-              {account}
-              {/* {balanceInEth} */}
+              integer risus, fames mi, luctus.
             </p>
             <br />
-            <button type="button" className="btn btn-warning button-large">
+            <button type="button" className="btn btn-warning button-large" onClick={()=>toast('Balance insufficient!')}>
               BUY NOW
             </button>
             <button
               type="button"
               className="btn btn-default button-large-default"
+              onClick={openModal1}
             >
               WHITEPAPER
             </button>
@@ -148,7 +123,7 @@ const Hero = () => {
             </div>
             <i className="bi bi-telegram"></i>
             <div style={{ marginTop: "20px" }}>
-              <button type="button" className="btn btn-default button-small">
+              <button type="button" className="btn btn-default button-small" >
                 AUDIT
               </button>
               <button type="button" className="btn btn-default button-small">

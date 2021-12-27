@@ -1,30 +1,30 @@
-// import { ComponentProps , ElementType, ReactElement, ReactNode } from "react";
-// import { Link} from "react-router-dom";
-// import { LayoutProps, SpaceProps } from "styled-system";
+import { ComponentProps , ElementType, ReactElement, ReactNode } from "react";
+import { Link} from "react-router-dom";
+import { LayoutProps, SpaceProps } from "styled-system";
 
-// export const scales = {
-//   MD: 'md',
-//   SM: 'sm',
-//   XS: 'xs',
-// }
+export const scales = {
+  MD: 'md',
+  SM: 'sm',
+  XS: 'xs',
+}
 
-// export const variants = {
-//   PRIMARY: "primary",
-//   SECONDARY: "secondary",
-//   TERTIARY: "tertiary",
-//   TEXT: "text",
-//   DANGER: "danger",
-//   SUBTLE: "subtle",
-//   SUCCESS: "success",
-//   DISABLED: "disabled",
-// } as const;
+export const variants = {
+  PRIMARY: "primary",
+  SECONDARY: "secondary",
+  TERTIARY: "tertiary",
+  TEXT: "text",
+  DANGER: "danger",
+  SUBTLE: "subtle",
+  SUCCESS: "success",
+  DISABLED: "disabled",
+};
 
 // export type Scale = typeof scales[keyof typeof scales]
 // export type Variant = typeof variants[keyof typeof variants]
 
-// /**
-//  * @see https://ww.benmvp.com/blog/polymorphic-react-components-typescript/
-//  */
+/**
+ * @see https://ww.benmvp.com/blog/polymorphic-react-components-typescript/
+ */
 // export type AsProps<E extends ElementType = ElementType> = {
 //   as? : E;
 // }

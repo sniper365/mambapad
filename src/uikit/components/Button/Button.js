@@ -1,11 +1,11 @@
 import React, { cloneElement, ElementType, isValidElement } from "react";
-import getExternalLinkProps from "uikit/utils/getExternalLinkProps";
+// import getExternalLinkProps from "uikit/utils/getExternalLinkProps";
 import StyledButton from "./StyledButton";
 import { ButtonProps, scales, variants } from "./types";
 
 const Button = (props) => {
   const { startIcon, endIcon, external, className, isLoading, disabled, children, ...rest } = props;
-  const internalProps = external ? getExternalLinkProps() : {};
+  // const internalProps = external ? getExternalLinkProps() : {};
   const isDisabled = isLoading || disabled;
   const classNames = className ? [className] : [];
 
@@ -22,7 +22,7 @@ const Button = (props) => {
       $isLoading={isLoading}
       className={classNames.join(" ")}
       disabled={isDisabled}
-      {...internalProps}
+      // {...internalProps}
       {...rest}
     >
       <>

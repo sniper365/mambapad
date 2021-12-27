@@ -1,9 +1,5 @@
 import { Route, Switch, Router } from "react-router-dom";
 import history from "./routerHistory";
-
-// import { Provider } from "react-redux";
-// import store from "./redux/store";
-// import SimpleBar from "simplebar-react";
 import "simplebar/dist/simplebar.min.css";
 import "./App.css";
 

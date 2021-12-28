@@ -1,7 +1,7 @@
 import { Route, Switch, Router } from "react-router-dom";
 import history from "./routerHistory";
-import "simplebar/dist/simplebar.min.css";
 import "./App.css";
+import "./assets/css/bootstrap.min.css";
 
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";

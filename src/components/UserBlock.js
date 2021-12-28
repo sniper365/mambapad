@@ -32,8 +32,6 @@ const userBlock = (account, login, logout ) => {
           onClick={()=>{
             onPresentConnectModal();
           }}
-          // disabled
-          // variant='disabled'
         >
           Connect
         </Button>

@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Table, Card } from "react-bootstrap";
+import Fade from "react-reveal/Fade";
+import Zoom from "react-reveal/Zoom";
+import Bounce from "react-reveal/Bounce";
 // import { Doughnut } from "react-chartjs-2";
 // import { MDBContainer } from "mdbreact";
 import FeatureCard from "./FeatureCard";
@@ -24,44 +27,94 @@ const MainFeatures = () => {
     <>
       <section className="container feature">
         <div className="feature">
-          <div className="feature-mamba">
-            <img src={leftsidebigmamba} alt="leftsidebigmamba" />
-          </div>
-          <h3 className="col-12 text-center font-weight-bold sub-title">
-            MAIN FEATURES
-          </h3>
-          <p className="text-center">
-            Quam a at nisl, vulputate blandit etiam. Lacinia cras enim sit
-            viverra imperdiet. Id malesuada eget scelerisque elit.
-          </p>
+          <Zoom left>
+            <div className="feature-mamba">
+              <img src={leftsidebigmamba} alt="leftsidebigmamba" />
+            </div>
+          </Zoom>
+          <Fade left>
+            <h3 className="col-12 text-center font-weight-bold sub-title">
+              MAIN FEATURES
+            </h3>
+            <p className="text-center">
+              Quam a at nisl, vulputate blandit etiam. Lacinia cras enim sit
+              viverra imperdiet. Id malesuada eget scelerisque elit.
+            </p>
+          </Fade>
           <section className="projects">
             {features.map((feature, index) => {
-              return <FeatureCard key={index} feature={feature} />;
+              return (
+                <Fade bottom>
+                  <FeatureCard key={index} feature={feature} />
+                </Fade>
+              );
             })}
           </section>
         </div>
         <section>
-          <Card className="tokenomics">
-            <Row>
-              <Col lg md="6">
-                <h3 className="col-12 text-center font-weight-bold feature-title">
-                  MAIN FEATURES
-                </h3>
-                <p className="text-center">
-                  Quam a at nisl, vulputate blandit etiam. Lacinia cras enim sit
-                  viverra imperdiet. Id malesuada eget scelerisque elit.
-                </p>
+          <Fade cascade>
+            <Card className="tokenomics">
+              <Row>
+                <Col lg md="6">
+                  <h3 className="col-12 text-center font-weight-bold feature-title">
+                    MAIN FEATURES
+                  </h3>
+                  <p className="text-center">
+                    Quam a at nisl, vulputate blandit etiam. Lacinia cras enim
+                    sit viverra imperdiet. Id malesuada eget scelerisque elit.
+                  </p>
+                  <Table
+                    bordered
+                    hover
+                    variant="dark"
+                    borderColor="red"
+                    style={{ marginLeft: "10px", borderColor: "red" }}
+                  >
+                    <thead>
+                      <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                    </tbody>
+                  </Table>
+                </Col>
+                <Col lg md="6" style={{ marginTop: "30px" }}>
+                  <img src={doughnut} alt="doughnut" />
+                </Col>
+              </Row>
+              <Row style={{ marginTop: "30px" }}>
                 <Table
                   bordered
                   hover
                   variant="dark"
-                  borderColor="red"
-                  style={{ marginLeft: "10px", borderColor: "red" }}
+                  style={{ marginLeft: "25px", marginRight: "25px" }}
                 >
                   <thead>
                     <tr>
                       <th>First Name</th>
                       <th>Last Name</th>
+                      <th>Username</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Username</th>
                       <th>Username</th>
                     </tr>
                   </thead>
@@ -70,74 +123,34 @@ const MainFeatures = () => {
                       <td>Mark</td>
                       <td>Otto</td>
                       <td>@mdo</td>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                      <td>@mdo</td>
                     </tr>
                     <tr>
                       <td>Jacob</td>
                       <td>Thornton</td>
                       <td>@fat</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
                     </tr>
                     <tr>
                       <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
                       <td>Thornton</td>
                       <td>@fat</td>
                     </tr>
                   </tbody>
                 </Table>
-              </Col>
-              <Col lg md="6" style={{ marginTop: "30px" }}>
-                <img src={doughnut} alt="doughnut" />
-              </Col>
-            </Row>
-            <Row style={{ marginTop: "30px" }}>
-              <Table
-                bordered
-                hover
-                variant="dark"
-                style={{ marginLeft: "25px", marginRight: "25px" }}
-              >
-                <thead>
-                  <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
-                    <th>Username</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                </tbody>
-              </Table>
-            </Row>
-          </Card>
+              </Row>
+            </Card>
+          </Fade>
         </section>
       </section>
       <hr style={{ borderColor: "#f1b90c" }} />

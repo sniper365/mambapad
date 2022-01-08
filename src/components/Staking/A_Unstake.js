@@ -1,7 +1,6 @@
 import React from "react";
 import { Row, Form } from "react-bootstrap";
 import Countdown from "react-countdown";
-import IdleTimer from "react-idle-timer";
 
 const UnstakeCard = () => {
 

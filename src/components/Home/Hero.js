@@ -1,6 +1,5 @@
 import React, { useEffect, useContext } from "react";
 import { useWeb3React } from "@web3-react/core";
-import { Row, Col } from "react-bootstrap";
 import { toast } from "react-toastify";
 import { useModal } from "../../contexts/modalContext";
 import Fade from "react-reveal/Fade";

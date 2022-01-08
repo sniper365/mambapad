@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { Row, Form, FormControl } from "react-bootstrap";
 import Countdown from "react-countdown";
-import DraftCountdown from "../DraftCountdown";
 
 const RewardCard = () => {
+  
+ 
+
   return (
     <section style={{ marginTop: "50px" }}>
       <section>
@@ -55,17 +57,23 @@ const RewardCard = () => {
                 100%
               </button>
             </div>
-            <section style={{margin:'10px 2em', border: "1px solid orange",borderRadius:'5px'  }}>
+            <section
+              style={{
+                margin: "10px 2em",
+                border: "1px solid orange",
+                borderRadius: "5px",
+              }}
+            >
               <div style={{ fontSize: "2em", textAlign: "center" }}>
-                <Countdown date={Date.now() + 30000000} daysInHours />
+                <Countdown date={Date.now()+5000000} daysInHours />
               </div>
               <div
                 style={{
-                  fontSize:'0.8em',
+                  fontSize: "0.8em",
                   textAlign: "center",
-                  padding:'3px 0',
+                  padding: "3px 0",
                   border: "1px solid orange",
-                  borderRadius:'5px'
+                  borderRadius: "5px",
                 }}
               >
                 <strong style={{ textAlign: "center", margin: "0 10px" }}>

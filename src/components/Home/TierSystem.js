@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import Fade from "react-reveal/Fade";
 import TierCard from "./TierCard";
 
 import { tiers } from "../../assets/variables";
@@ -10,9 +10,11 @@ export default class TierSystem extends Component {
     return (
       <>
         <section className="container tier">
-          <div className="tiersystem-mamba">
-            <img src={rightsidemamba} alt="rightmamba" />
-          </div>
+            <div className="tiersystem-mamba">
+          <Fade left>
+              <img src={rightsidemamba} alt="rightmamba" />
+          </Fade>
+            </div>
           <h3 className="col-12 text-center font-weight-bold sub-title">
             TIER SYSTEM
           </h3>

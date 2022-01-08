@@ -1,12 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { ModalProvider } from "./contexts/modalContext";
 
 import "./index.css";
 import "./assets/css/bootstrap.min.css";
 import App from "./App";
 import Providers from "./Providers";
-
+import { ModalProvider } from "./contexts/modalContext";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
@@ -19,5 +18,11 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
+
+// OverlayScrollbars(document.body, {
+//   nativeScrollbarsOverlaid: {
+//     initialize: true,
+//   },
+// });
 
 reportWebVitals();

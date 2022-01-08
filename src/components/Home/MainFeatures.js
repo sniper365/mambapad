@@ -44,9 +44,7 @@ const MainFeatures = () => {
           <section className="projects">
             {features.map((feature, index) => {
               return (
-                <Fade bottom>
                   <FeatureCard key={index} feature={feature} />
-                </Fade>
               );
             })}
           </section>
